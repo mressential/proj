@@ -99,9 +99,9 @@ int main(void)
 		TCNT0 = 0
 	*/
 	TIMSK0 |= (T0_COMPB<<OCR0B) | (T0_COMPA<<OCR0A) | (T0_OVF<<TCNT0);
-	TCCR0B |= (1 << 0); // 1/1 
+	TCCR0B |= (1 << 0); 	// 1/1 
 	OCR0A = 30;		// from 0xFF
-	OCR0B = 180;	// from 0xFF
+	OCR0B = 180;		// from 0xFF
 	
 	/*
 		OCR1B = 2
@@ -109,9 +109,9 @@ int main(void)
 		TCNT1 = 0
 	*/
 	TIMSK1 |= (T1_COMPB<<OCR1B) | (T1_COMPA<<OCR1A) | (T1_OVF<<TCNT1);
-	TCCR1B |= (1 << 0); // 1/1 
-	OCR1A = 0x0F0F;	// from 0xFFFF
-	OCR1B = 0xFF0F;	// from 0xFFFF
+	TCCR1B |= (1 << 0); 	// 1/1 
+	OCR1A = 0x0F0F;		// from 0xFFFF
+	OCR1B = 0xFF0F;		// from 0xFFFF
 	/*
 		OCR2B = 2
 		OCR2A = 1
