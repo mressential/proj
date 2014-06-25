@@ -2,7 +2,7 @@
  * v01.c
  *
  * Created: 25.06.2014 23:16:21
- *  Author: Essential
+ *  Author: Ivanov Dmitry
  */ 
 
 
