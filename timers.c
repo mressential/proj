@@ -118,9 +118,9 @@ int main(void)
 		TCNT2 = 0
 	*/
 	TIMSK2 |= (T2_COMPB<<OCR2B) | (T2_COMPA<<OCR2A) | (T2_OVF<<TCNT2);
-	TCCR2B |= (1 << 0); // 1/1 
+	TCCR2B |= (1 << 0); 	// 1/1 
 	OCR2A = 50;		// from 0xFF
-	OCR2B = 240;	// from 0xFF(255)
+	OCR2B = 240;		// from 0xFF(255)
 	
 	
 	/* 
@@ -132,8 +132,8 @@ int main(void)
 	 */
 	#define WATCH_DOG 1
 	
-	WDTCSR = (WATCH_DOG<<WDE) |	// do u wanna? // WDE = 3
-				(3 << 0)	|	// 1/8;
+	WDTCSR = (WATCH_DOG<<WDE) |		// do u wanna? // WDE = 3
+				(3 << 0)	// 1/8;
 				(1 << WDIE);	// enable irq
 	// !!!!!!!
 	asm("wdr");	// Watch Dog reset
