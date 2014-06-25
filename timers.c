@@ -124,7 +124,7 @@ int main(void)
 	
 	
 	/* 
-		You know haw to work with timers, but WATCH DOG is't simple timer!
+		You know how to work with timers, but WATCH DOG is't simple timer!
 		if you wanna turn on watch dog timer, you need defined WATCH_DOG 1
 			and write WDIE bit;
 		if in the course of the program there is a need to turn off the watch dog 
