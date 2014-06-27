@@ -27,4 +27,3 @@ int main(void)
 	TaskPush(LedOn, 0);		// включаем а затем выключаем диод
 	while (1) {asm("nop");}
 }
-
