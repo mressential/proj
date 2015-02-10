@@ -1,0 +1,52 @@
+\documentclass[a4paper, 12pt, russian]{article}
+
+\addtolength{\topmargin}{-3.5 true cm}
+\addtolength{\textheight}{4 true cm}
+\addtolength{\hoffset}{-2.2 true cm}
+\addtolength{\textwidth}{4.5 true cm}
+
+%\usepackage[cp1251]{inputenc}
+\usepackage{amsmath, amsthm, amsfonts, amssymb}
+\usepackage{graphicx}
+\usepackage{floatflt} 
+%\usepackage{nccfloats}
+%\usepackage{wrapfig}
+
+%\pagestyle{empty} % нумерация выкл.
+\pagestyle{plain} % нумерация вкл.
+
+\usepackage[english,russian]{babel}
+\usepackage{cmap} % для кодировки шрифтов в pdf
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+
+
+\usepackage{calc}
+%\usepackage{srcltx}
+\usepackage{caption}
+\usepackage{subcaption}
+
+
+
+\begin{document}
+
+\selectlanguage{russian} % для переносов
+
+\newtheorem{Def}{Определение}%[section]
+\newtheorem{Th}{Теорема}%[section]
+\newtheorem{Sled}{Следствие}%[section]
+\newtheorem{Lem}{Лемма}
+
+\newenvironment{Proof}
+{\par\noindent{\bf Доказательство.}} 
+{\hfill$\scriptstyle\blacksquare$}
+
+\tableofcontents
+
+\include{lec/lec1}
+
+
+
+
+
+\end{document} 
