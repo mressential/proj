@@ -1,0 +1,110 @@
+
+\newpage
+\section{Лекция 1}
+\subsection{Операции над событиями}
+\begin{enumerate}
+	\item $E$ --- достоверное событие(обязательно происходит)
+	\item $\varnothing$ --- невозможное событие
+	\item $A \subset B$ (событие $A$ влечет за собой событие $B$)
+	\item $A = B$, ($A \subset B$, $B \subset A$)
+	\item $\overline{A}$ --- не произойдет $A$
+	\item $A + B$ --- произойдет либо $A$, либо $B$, либо $A$ и $B$ совместно
+		\[
+			\sum_k A_k \text{--- произойдет хотя бы одно } A_k, k = 1, 2 \ldots		
+		\]
+	\item  $AB$ --- произошло и $A$ и $B$ одновременно
+		\[
+			\prod_k A_k \text{--- произошли все } A_k		
+		\]
+	\item если $AB = \varnothing$, то $A$ и $B$ несовместны
+	\item если $A \subset B$, то $B - A = B \overline{A}$
+\end{enumerate}
+Следствия
+\begin{enumerate}
+	\item $\varnothing \subset A \subset E$
+	\item $A_k \subset \sum_i A_i (A_k = A_i)$
+	\item $\prod_i A_i \subset A_k (A_i = A_k)$
+	\item $ A + \varnothing = A; A + E = E; A\varnothing = \varnothing; AE = A$
+		\[
+\textsf{Закон двойственности	}
+		\]
+	\item $\overline{\sum_k A_k} = \prod_k \overline{A_k}$
+	\item $\overline{\prod_k A_k} = \sum_k \overline{A_k}$
+\end{enumerate}
+
+\subsection{Определение Аксиомы $\sigma$-алгебры событий $\mathbb{A} = {A_1, B_1, \ldots}$}
+\begin{enumerate}
+	\item $E \in \mathbb{A}$
+	\item если $A \in \mathbb{A}$, то $\overline{A} \in \mathbb{A}$
+	\item если $A_k \in \mathbb{A}, k = 1, 2, \ldots$, то $\sum_k A_k \in \mathbb{A}$
+\end{enumerate}
+Следствие
+\begin{enumerate}
+	\item $\varnothing = \overline{E} \in \mathbb{A}$ (1, 2)
+	\item $\prod_k A_k = \overline{\sum_k \overline{A_k}}$ (2, 3)
+\end{enumerate}
+
+\subsection{Аксиомы поля вероятности ($\mathbb{A, P}$)}
+$\mathbb{P}$ --- числ. функция на $\mathbb{A}$
+\begin{enumerate}
+	\item $A \in \mathbb{A}$, $0 \le P(A) \le 1$
+	\item $P(E) = 1, P(\varnothing) = 0$
+	\item если $A_k \in \mathbb{A}, k = 1, 2, \ldots; \  \ \ A_kA_l = \varnothing, k \not= l$ попарно несовместные, то $P \left( \sum_k A_k \right) = \sum_k P \left(A_k \right)$
+\end{enumerate}
+
+Пример $\sigma$-алгебры событий: \\
+Интервал числовой оси $\mathbb{R}^1 = (-\infty; + \infty)$ \\
+\[\triangle = <a, b>\ \ \ -\infty \le a \le b \le +\infty\]
+
+\subsection{Следствие из аксиматики $\mathbb{A, P}$}
+\begin{enumerate}
+	\item $P(\overline{A} = 1 - P(A))$
+		\begin{Proof}
+			$A + \overline{A} = E$, $A\overline{A} = \varnothing$ --- эти события несовместны. $P(E) = 1 = P(A + \overline{A}) = P(A) + P(\overline{A})$
+		\end{Proof}	
+	\item $P(A + B) = P(A) + P(B) - P(AB)$
+		\begin{Proof}
+			\begin{enumerate}
+				\item $A + B = A + BE = A + B(A + \overline{A}) = \overbrace{A + BA}^{BA \subset A} + B\overline{A} = A + B\overline{A}\ \ \ \left(A(B\overline{A}) = \varnothing \right)$
+				\item $B = BE = B(A + \overline{A}) = BA + B\overline{A}\ \ \ \left( (BA)(B\overline{A}) = \varnothing  \right)$
+			\end{enumerate}
+			из (a) $P(A + B) = P(A) + P(B\overline{A})$\\
+			из (b) $P(B) = P(BA) + P(B\overline{A})$ \\
+			получаем: $P(A + B) = P(A) + P(B) - P(AB)$
+		\end{Proof}
+	\item $A_1 \subset A_2 \subset A_3 \subset \ldots$
+	\[
+		A = \sum_k A_k
+		P(A) = \lim_{n \to \infty} P \left( \sum_{k = 1}^{n} A_k \right) = \lim_{n \to \infty} P(A_n)	
+	\]
+	\begin{Proof}
+		\[
+		A_1 + A_2 + A_3 +\ldots + A_n = \overbrace{A_1 + A_2(A_1 + \overline{A_1})}^{A_1 + A_2\overline{A_1}} + A_3\overline{A_2} + \ldots + A_nA_{n-1}
+		\] \[
+		P \left( \sum_{k = 1}^n A_k \right) = P(A_1) + P(A_2) - P(A_1) + \ldots + P(A_n) - P(A_{n - 1}) = P(A_n)		
+		\]
+	\end{Proof}
+	
+	\item $B_1 \supset B_2 \supset B_3 \supset \ldots$ 
+	\[
+		B = \prod_k B_k	
+	\] \[
+		P(B)	 = \lim_{n \to \infty} P(B_n), \ \ \ B_n = \prod_{k = 1}^n B_k
+	\]
+	Док. по закону двойственности
+\end{enumerate}
+\subsection{Классическое поле вероятности}
+Рассмотрим поле вероятности ($\mathbb{A, P}$)
+\begin{enumerate}
+	\item $E_k, k = 1, 2, \ldots, n$ \\
+		  $E_i E_j \not= 0_{i \not= j}$, $\sum_{k = 1}^n E_k = E$, $\varnothing \in \mathbb{A}$
+	\item $A \in \mathbb{A}$, $A = \sum_{k = 1}^m E_{i_k}$, \ \ \ $1 \le i_k \le \ldots \le i_m \le n$\\
+	$P(E_k) = \dfrac{1}{n}$, \ \ $P(A) = \dfrac{m}{n}$
+\end{enumerate}
+
+
+\subsection{Геометрическая вероятность}
+Область $D$ квадрируема(имеет площадь), $A = (M \in D_0)$, $D_0$ --- квадр., $D_0 \le D$,  $M = (x,y)$, тогда вероятность попасть в область равна: 
+\[
+	P(A) = \dfrac{\text{пл.} D_0}{\text{пл.} D}
+\]
